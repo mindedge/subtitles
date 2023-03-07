@@ -1,7 +1,7 @@
 <?php
 
-use Done\Subtitles\Subtitles;
-use Done\Subtitles\Test\Helpers\AdditionalAssertions;
+use MindEdge\Subtitles\Subtitles;
+use MindEdge\Subtitles\Tests\Helpers\AdditionalAssertions;
 use PHPUnit\Framework\TestCase;
 
 class TxtTest extends TestCase

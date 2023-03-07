@@ -1,6 +1,6 @@
 <?php
 
-namespace Done\Subtitles\Test\Helpers;
+namespace MindEdge\Subtitles\Tests\Helpers;
 
 trait AdditionalAssertions
 {

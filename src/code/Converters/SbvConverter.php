@@ -1,6 +1,9 @@
-<?php namespace Done\Subtitles;
+<?php
 
-class SbvConverter implements ConverterContract {
+namespace MindEdge\Subtitles;
+
+class SbvConverter implements ConverterContract
+{
 
     /**
      * Converts file's content (.srt) to library's "internal format" (array)

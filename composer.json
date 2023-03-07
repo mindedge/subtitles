@@ -1,19 +1,20 @@
 {
-    "name": "mantas-done/subtitles",
+    "name": "mindedge/subtitles",
     "description": "Subtitle converter and generator for PHP",
     "type": "library",
     "minimum-stability": "dev",
     "autoload": {
         "classmap": [
-            "src"
+            "src",
+            "tests"
         ],
         "psr-4": {
-            "Done\\Subtitles\\": "src/"
+            "MindEdge\\Subtitles\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Done\\Subtitles\\Tests\\": "tests/"
+            "MindEdge\\Subtitles\\Tests\\": "tests/"
         }
     },
     "require-dev": {

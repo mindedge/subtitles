@@ -1,4 +1,6 @@
-<?php namespace Done\Subtitles;
+<?php
+
+namespace MindEdge\Subtitles;
 
 class DfxpConverter implements ConverterContract
 {

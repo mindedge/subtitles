@@ -1,6 +1,6 @@
 <?php
 
-namespace Done\Subtitles;
+namespace MindEdge\Subtitles;
 
 // qt.txt
 class TxtConverter implements ConverterContract

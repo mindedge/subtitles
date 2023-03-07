@@ -1,6 +1,6 @@
 <?php
 
-namespace Done\Subtitles;
+namespace MindEdge\Subtitles;
 
 class VttConverter implements ConverterContract
 {
