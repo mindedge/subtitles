@@ -1,7 +1,9 @@
 <?php
 
+namespace Tests\Formats;
+
 use MindEdge\Subtitles\Subtitles;
-use MindEdge\Subtitles\Tests\Helpers\AdditionalAssertions;
+use Tests\Traits\AdditionalAssertions;
 use PHPUnit\Framework\TestCase;
 
 class VttTest extends TestCase

@@ -1,7 +1,10 @@
 <?php
 
+namespace Tests\Formats;
+
+use Exception;
 use MindEdge\Subtitles\Subtitles;
-use MindEdge\Subtitles\Tests\Helpers\AdditionalAssertions;
+use Tests\Traits\AdditionalAssertions;
 use PHPUnit\Framework\TestCase;
 
 class StlTest extends TestCase

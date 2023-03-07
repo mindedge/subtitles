@@ -2,19 +2,16 @@
     "name": "mindedge/subtitles",
     "description": "Subtitle converter and generator for PHP",
     "type": "library",
+    "license": "MIT",
     "minimum-stability": "dev",
     "autoload": {
-        "classmap": [
-            "src",
-            "tests"
-        ],
         "psr-4": {
             "MindEdge\\Subtitles\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MindEdge\\Subtitles\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "require-dev": {
