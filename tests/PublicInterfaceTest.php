@@ -1,8 +1,11 @@
 <?php
 
+namespace Tests;
+
+use Exception;
 use PHPUnit\Framework\TestCase;
 use MindEdge\Subtitles\Subtitles;
-use MindEdge\Subtitles\Tests\Helpers\AdditionalAssertions;
+use Tests\Traits\AdditionalAssertions;
 
 class PublicInterfaceTest extends TestCase
 {

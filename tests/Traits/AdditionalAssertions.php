@@ -1,6 +1,6 @@
 <?php
 
-namespace MindEdge\Subtitles\Tests\Helpers;
+namespace Tests\Traits;
 
 trait AdditionalAssertions
 {

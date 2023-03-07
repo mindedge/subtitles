@@ -2,6 +2,8 @@
 
 namespace MindEdge\Subtitles;
 
+use MindEdge\Subtitles\Helpers\Helpers;
+
 class Subtitles implements SubtitleContract
 {
 

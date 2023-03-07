@@ -1,6 +1,6 @@
 <?php
 
-namespace MindEdge\Subtitles;
+namespace MindEdge\Subtitles\Helpers;
 
 class Helpers
 {
@@ -29,11 +29,11 @@ class Helpers
     {
         $class_name = ucfirst($extension) . 'Converter';
 
-        if (!file_exists(__DIR__ . '/Converters/' . $class_name . '.php')) {
+        if (!file_exists(__DIR__ . '/../Converters/' . $class_name . '.php')) {
             throw new \Exception('unknown format: ' . $extension);
         }
 
-        $full_class_name = "\\MindEdge\\Subtitles\\" . $class_name;
+        $full_class_name = "\\MindEdge\\Subtitles\\Converters\\" . $class_name;
 
         return new $full_class_name();
     }

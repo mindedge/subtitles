@@ -1,8 +1,8 @@
 <?php
 
-namespace MindEdge\Subtitles;
+namespace MindEdge\Subtitles\Converters;
 
-class SbvConverter implements ConverterContract
+class SubConverter implements ConverterContract
 {
 
     /**
@@ -23,7 +23,7 @@ class SbvConverter implements ConverterContract
             $internal_format[] = [
                 'start' => static::srtTimeToInternal($times[0]),
                 'end' => static::srtTimeToInternal($times[1]),
-                'lines' => array_slice($lines, 1), // get all the remaining lines from block (if multiple lines of text)
+                'lines' => explode('[br]', $lines[1]), // get all the remaining lines from block (if multiple lines of text)
             ];
         }
 
@@ -43,11 +43,11 @@ class SbvConverter implements ConverterContract
         foreach ($internal_format as $k => $block) {
             $start = static::internalTimeToSrt($block['start']);
             $end = static::internalTimeToSrt($block['end']);
-            $lines = implode("\n", $block['lines']);
+            $lines = implode("[br]", $block['lines']);
 
-            $file_content .= $start . ',' . $end . "\n";
-            $file_content .= $lines . "\n";
-            $file_content .= "\n";
+            $file_content .= $start . ',' . $end . "\r\n";
+            $file_content .= $lines . "\r\n";
+            $file_content .= "\r\n";
         }
 
         $file_content = trim($file_content);
@@ -61,13 +61,13 @@ class SbvConverter implements ConverterContract
      * Convert .srt file format to internal time format (float in seconds)
      * Example: 00:02:17,440 -> 137.44
      *
-     * @param $srt_time
+     * @param $sub_time
      *
      * @return float
      */
-    protected static function srtTimeToInternal($srt_time)
+    protected static function srtTimeToInternal($sub_time)
     {
-        $parts = explode('.', $srt_time);
+        $parts = explode('.', $sub_time);
 
         $only_seconds = strtotime("1970-01-01 {$parts[0]} UTC");
         $milliseconds = (float)('0.' . $parts[1]);
@@ -87,11 +87,12 @@ class SbvConverter implements ConverterContract
      */
     protected static function internalTimeToSrt($internal_time)
     {
-        $parts = explode('.', $internal_time); // 1.23
-        $whole = $parts[0]; // 1
-        $decimal = isset($parts[1]) ? substr($parts[1], 0, 3) : 0; // 23
+        $seconds = floor($internal_time);
+        $remainder = fmod($internal_time, 1);
+        $remainder_string = round($remainder, 2) * 100;
+        $remainder_string = str_pad($remainder_string, 2, '0', STR_PAD_RIGHT);
 
-        $srt_time = gmdate("0:i:s", floor($whole)) . '.' . str_pad($decimal, 3, '0', STR_PAD_RIGHT);
+        $srt_time = gmdate("H:i:s", $seconds) . '.' . $remainder_string;
 
         return $srt_time;
     }
