@@ -1,6 +1,9 @@
-<?php namespace Done\Subtitles;
+<?php
 
-class AssConverter implements ConverterContract {
+namespace MindEdge\Subtitles;
+
+class AssConverter implements ConverterContract
+{
 
     public function fileContentToInternalFormat($file_content)
     {

@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Done\Subtitles\Subtitles;
-use Done\Subtitles\Test\Helpers\AdditionalAssertions;
+use MindEdge\Subtitles\Subtitles;
+use MindEdge\Subtitles\Tests\Helpers\AdditionalAssertions;
 
 class PublicInterfaceTest extends TestCase
 {

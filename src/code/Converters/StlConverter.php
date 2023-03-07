@@ -1,6 +1,9 @@
-<?php namespace Done\Subtitles;
+<?php
 
-class StlConverter implements ConverterContract {
+namespace MindEdge\Subtitles;
+
+class StlConverter implements ConverterContract
+{
 
     public function fileContentToInternalFormat($file_content)
     {
@@ -163,5 +166,4 @@ class StlConverter implements ConverterContract {
 
         return $max_frames;
     }
-
 }

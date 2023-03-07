@@ -1,6 +1,9 @@
-<?php namespace Done\Subtitles;
+<?php
 
-interface ConverterContract {
+namespace MindEdge\Subtitles;
+
+interface ConverterContract
+{
 
     /**
      * Converts file content (.srt, .stl... file content) to library's "internal format"
@@ -17,5 +20,4 @@ interface ConverterContract {
      * @return string                   Converted file content
      */
     public function internalFormatToFileContent(array $internal_format);
-
 }

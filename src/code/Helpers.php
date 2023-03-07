@@ -1,6 +1,6 @@
 <?php
 
-namespace Done\Subtitles;
+namespace MindEdge\Subtitles;
 
 class Helpers
 {
@@ -33,7 +33,7 @@ class Helpers
             throw new \Exception('unknown format: ' . $extension);
         }
 
-        $full_class_name = "\\Done\\Subtitles\\" . $class_name;
+        $full_class_name = "\\MindEdge\\Subtitles\\" . $class_name;
 
         return new $full_class_name();
     }
